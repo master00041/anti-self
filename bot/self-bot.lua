@@ -233,7 +233,8 @@ function create_config( )
     "antispam",
     "lockcontact",
     "spam",
-    "id2"
+    "id2",
+    "infofa"
     },
     sudo_users = {170172168},--Sudo users
     moderation = {data = 'data/moderation.json'},
