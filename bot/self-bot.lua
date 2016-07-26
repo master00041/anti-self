@@ -225,7 +225,15 @@ function create_config( )
     "groupmanager",
     "on-off",
     "version",
-    "solid"
+    "solid",
+    "pesaram",
+    "amin",
+    "lockreply",
+    "lockemoji",
+    "antispam",
+    "lockcontact",
+    "spam",
+    "id2"
     },
     sudo_users = {170172168},--Sudo users
     moderation = {data = 'data/moderation.json'},
