@@ -1,4 +1,4 @@
-# Beyond Self Bot Version 2.0
+# master Self Bot Version 2.0
 
 **An Fun bot based on [TeleSeed](https://github.com/SEEDTEAM/TeleSeed) licensed under the [GNU General Public License](https://github.com/BeyondTeam/Self-Bot/blob/master/LICENSE)**.
 
@@ -14,8 +14,8 @@
 ```
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
 cd $HOME
-git clone https://github.com/BeyondTeam/Self-Bot.git -b supergroups
-cd Self-Bot
+git clone https://github.com/master00041/anti-self.git -b supergroups
+cd anti-self
 chmod +x launch.sh
 ./launch.sh install
 cd .luarocks/bin
@@ -54,27 +54,24 @@ tmux new-session -s script "bash beyond.sh -t"
 ```
 
 #Developer&Founder : 
-#[SoLiD021](https://telegram.me/SoLiD021)
+#[SoLiD021](https://telegram.me/pedaret)
 
-#Developer&Manager : 
-#[AliReza](https://telegram.me/CliApi)
+
 
 * * *
 
 # Special Thx To :
 ###Seed Team
 
+###BeyondTeam
+
 ###And All My Friends :D
 
-#Team Channel :
 
-#[@BeyondTeam](https://telegram.me/BeyondTeam)
 
-###اگر مشکلی داشتید به لینک های زیر بیاید و مطرح کنید
-###If You Have Any Problem With Source, Join To Links And Ask About Your Problem
-#[TeleBeyond Support](https://telegram.me/joinchat/DH-5lD7jQzw--m36LgqOVA)
 
-#[Api-TeleBeyond Development](https://telegram.me/joinchat/CVyJuz6_PJBUrk_w--1JXw)
+
+
 
 #موفق باشید -_-
 #Good Luck -_-
