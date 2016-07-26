@@ -55,7 +55,7 @@ local function get_weather(location)
    local weather = json:decode(b)
    local city = weather.name
    local country = weather.sys.country
-   local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @BeyondTeam :)'
+   local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @pedaret'
    local conditions = 'شرایط فعلی آب و هوا : '
 
    if weather.weather[1].main == 'Clear' then
@@ -79,7 +79,7 @@ local function calc(exp)
    b,c = http.request(url)
    text = nil
   if c == 200 then
-    text = 'Result = '..b..'\n____________________\n @BeyondTeam :)'
+    text = 'Result = '..b..'\n____________________\n @pedaret'
   elseif c == 400 then
     text = b
   else
@@ -123,7 +123,7 @@ end
  if matches[1] == "mean" and is_sudo(msg) then
  http = http.request('http://api.vajehyab.com/v2/public/?q='..URL.escape(matches[2]))
    data = json:decode(http)
-	return 'واژه : '..(data.data.title or data.search.q)..'\n\nترجمه : '..(data.data.text or '----' )..'\n\nمنبع : '..(data.data.source or '----' )..'\n\n'..(data.error.message or '')..'\n..\n____________________\n @BeyondTeam :)'
+	return 'واژه : '..(data.data.title or data.search.q)..'\n\nترجمه : '..(data.data.text or '----' )..'\n\nمنبع : '..(data.data.source or '----' )..'\n\n'..(data.error.message or '')..'\n..\n____________________\n @pedaret'
 end
    --------------------------
       if matches[1] == "dl" and matches[2] == "plugin" and is_sudo(msg) then
@@ -189,7 +189,7 @@ end
    if matches[1] == "tr" and is_sudo(msg) then 
      url = https.request('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang='..URL.escape(matches[2])..'&text='..URL.escape(matches[3]))
      data = json:decode(url)
-   return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @BeyondTeam :)'
+   return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @pedaret :)'
 end
    
 -----------------------
@@ -202,8 +202,7 @@ if matches[1] == 'short' and is_sudo(msg) then
   local opizo = http.request('http://api.gpmod.ir/shorten/?url='..URL.escape(matches[2])..'&username=mersad565@gmail.com')
   local u2s = http.request('http://u2s.ir/?api=1&return_text=1&url='..URL.escape(matches[2]))
   local llink = http.request('http://llink.ir/yourls-api.php?signature=a13360d6d8&action=shorturl&url='..URL.escape(matches[2])..'&format=simple')
-    return ' 🌐لینک اصلی :\n'..data.data.long_url..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..data.data.url..'\n___________________________\n》کوتاه شده با yeo :\n'..yeo..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..opizo..'\n___________________________\n》کوتاه شده با u2s :\n'..u2s..'\n___________________________\n》کوتاه شده با llink : \n'..llink..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..jdat.output..'\n____________________\n @BeyondTeam :)'
-end
+    return ' 🌐لینک اصلی :\n'..data.data.long_url..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..data.data.url..'\n___________________________\n》کوتاه شده با yeo :\n'..yeo..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..opizo..'\n___________________________\n》کوتاه شده با u2s :\n'..u2s..'\n___________________________\n》کوتاه شده با llink : \n'..llink..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..jdat.output..'\n____________________\n @Beyonen
 ------------------------
  local receiver = get_receiver(msg)
     local group = msg.to.id
@@ -215,7 +214,7 @@ end
     
       if matches[1]:lower() == "photo" and is_sudo(msg) then
      redis:get("sticker:photo")
-    send_large_msg(receiver, 'By @BeyondTeam :)', ok_cb, false)
+    send_large_msg(receiver, 'By @pedaret :)', ok_cb, false)
         load_document(msg.reply_id, toimage, msg)
     end
 end
@@ -229,7 +228,7 @@ end
        end
       if matches[1]:lower() == "sticker" and is_sudo(msg) then
      redis:get("photo:sticker")  
-    send_large_msg(receiver, 'By @BeyondTeam :)', ok_cb, false)
+    send_large_msg(receiver, 'By @pedaret :)', ok_cb, false)
         load_photo(msg.reply_id, tosticker, msg)
     end
 end
@@ -291,21 +290,21 @@ end
 end
 return {               
 patterns = {
-   "^[!/]([Aa]ddplugin) (.+) (.*)$",
-    "^[!/]([Dd]l) ([Pp]lugin) (.*)$",
-   "^[!/]([Cc]lean) (msg) (%d*)$",
-   "^[!/]([Dd]elplugin) (.*)$",
-   "^[!/#](weather) (.*)$",
-   "^[!/](calc) (.*)$",
-   "^[#!/](time)$",
-   "^[!/#](voice) +(.*)$",
-   "^[!/]([Tt]r) ([^%s]+) (.*)$",
-   "^[!/]([Mm]ean) (.*)$",
-   "^[!/]([Ss]hort) (.*)$",
-   "^[#!/]([Ss]ticker)$",
-   "^[#!/](photo)$",
-     "^[!/](photo) (.+)$",
-    "^[!/](sticker) (.+)$",
+   "^([Aa]ddplugin) (.+) (.*)$",
+    "^([Dd]l) ([Pp]lugin) (.*)$",
+   "^([Cc]lean) (msg) (%d*)$",
+   "^([Dd]elplugin) (.*)$",
+   "^(weather) (.*)$",
+   "^(calc) (.*)$",
+   "^(time)$",
+   "^(voice) +(.*)$",
+   "^([Tt]r) ([^%s]+) (.*)$",
+   "^([Mm]ean) (.*)$",
+   "^([Ss]hort) (.*)$",
+   "^([Ss]ticker)$",
+   "^(photo)$",
+     "^(photo) (.+)$",
+    "^(sticker) (.+)$",
    "%[(document)%]",
    "%[(photo)%]",
  }, 
