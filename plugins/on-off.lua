@@ -17,13 +17,13 @@ local function enable_channel(receiver)
 	end
 
 	if _config.disabled_channels[receiver] == nil then
-		return "dalam babayi  :)"
+		return "`dalam babayi  :)`"
 	end
 	
 	_config.disabled_channels[receiver] = false
 
 	save_config()
-	return "dalam babayi :D"
+	return "`dalam babayi :D`"
 end
 
 local function disable_channel( receiver )
@@ -34,7 +34,7 @@ local function disable_channel( receiver )
 	_config.disabled_channels[receiver] = true
 
 	save_config()
-	return "bb baba joonm :/"
+	return "`bb baba joonm :/`"
 end
 
 local function pre_process(msg)
@@ -79,8 +79,8 @@ return {
 		"/channel enable: enable current channel",
 		"/channel disable: disable current channel" },
 	patterns = {
-		"^[!/][Bb]ot (on)",
-		"^[!/][Bb]ot (off)" }, 
+		"^[Bb]ot (on)",
+		"^[Bb]ot (off)" }, 
 	run = run,
 	--privileged = true,
 	moderated = true,
