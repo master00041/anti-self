@@ -1,7 +1,7 @@
 do
     
 function run(msg, matches)
-  local help = [[Beyond Self Commands
+  local help = [[master Self Commands
 
 🔴دستورات مدیریتی ربات👇
 
@@ -128,7 +128,7 @@ function run(msg, matches)
 مثال : !clean msg 100
 
 ➖➖➖➖➖➖
-Developer id : 😎@pedaret 😎
+`Developer id : 😎@pedaret 😎`
 ➖➖➖➖➖➖]]
     if matches[1] == 'help' and is_sudo(msg) then
       send_large_msg("user#id"..msg.from.id, help)      
