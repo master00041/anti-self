@@ -235,6 +235,7 @@ function create_config( )
     "spam",
     "id2",
     "infofa"
+    "random"
     },
     sudo_users = {170172168},--Sudo users
     moderation = {data = 'data/moderation.json'},
